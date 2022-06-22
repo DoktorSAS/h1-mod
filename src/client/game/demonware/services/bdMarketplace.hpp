@@ -2,10 +2,10 @@
 
 namespace demonware
 {
-	class bdUNK80 final : public service
+	class bdMarketplace final : public service
 	{
 	public:
-		bdUNK80();
+		bdMarketplace();
 
 	private:
 		void unk42(service_server* server, byte_buffer* buffer) const;

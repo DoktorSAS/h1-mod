@@ -2,10 +2,10 @@
 
 namespace demonware
 {
-	class bdUNK95 final : public service
+	class bdPublisherVariables final : public service
 	{
 	public:
-		bdUNK95();
+		bdPublisherVariables();
 
 	private:
 		void unk1(service_server* server, byte_buffer* buffer) const;

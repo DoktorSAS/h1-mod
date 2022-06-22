@@ -27,8 +27,8 @@
 #include "services/bdEventLog.hpp"          // 67
 #include "services/bdRichPresence.hpp"      // 68
 //#include "services/bdTitleUtilities2.hpp" // 72
-#include "services/bdUNK80.hpp"
-#include "services/bdUNK95.hpp"
+#include "services/bdMarketplace.hpp"       // 80
+#include "services/bdPublisherVariables.hpp"// 95
 // AccountLinking                           // 86
 #include "services/bdPresence.hpp"          //103
 #include "services/bdMarketingComms.hpp"    //104
