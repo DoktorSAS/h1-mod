@@ -15,7 +15,7 @@ namespace demonware
 		this->register_task(21, &bdStorage::get_publisher_file);
 		this->register_task(24, &bdStorage::set_user_file);
 		this->register_task(16, &bdStorage::get_user_file);
-		this->register_task(12, &bdStorage::unk12);
+		this->register_task(12, &bdStorage::get_file);
 
 		this->map_publisher_resource("motd-.*\\.txt", DW_MOTD);
 		// this->map_publisher_resource("ffotd-.*\\.ff", DW_FASTFILE);
@@ -253,7 +253,7 @@ namespace demonware
 		}
 	}
 
-	void bdStorage::unk12(service_server* server, byte_buffer* buffer) const
+	void bdStorage::get_file(service_server* server, byte_buffer* buffer) const
 	{
 #ifdef DEBUG
 		utils::io::write_file("demonware/bdStorage/unk12", buffer->get_buffer());

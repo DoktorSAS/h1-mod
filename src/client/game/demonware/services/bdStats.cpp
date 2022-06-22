@@ -10,6 +10,7 @@ namespace demonware
 		this->register_task(4, &bdStats::unk4);
 		this->register_task(8, &bdStats::unk8);
 		this->register_task(11, &bdStats::unk11);
+		//this->register_task(14, &bdStats::write_server_validated_stats);
 	}
 
 	void bdStats::unk1(service_server* server, byte_buffer* /*buffer*/) const
@@ -41,6 +42,13 @@ namespace demonware
 	}
 
 	void bdStats::unk11(service_server* server, byte_buffer* /*buffer*/) const
+	{
+		// TODO:
+		auto reply = server->create_reply(this->task_id());
+		reply->send();
+	}
+
+	void bdStats::write_server_validated_stats(service_server* server, byte_buffer* /*buffer*/) const
 	{
 		// TODO:
 		auto reply = server->create_reply(this->task_id());

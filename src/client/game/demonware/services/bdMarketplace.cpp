@@ -1,12 +1,14 @@
 #include <std_include.hpp>
 #include "../services.hpp"
 
+#include <utils/io.hpp>
+
 namespace demonware
 {
 	bdMarketplace::bdMarketplace() : service(80, "bdMarketplace")
 	{
-		this->register_task(42, &bdMarketplace::start_exchange_transaction); // COD POINTS purchase ?
-		// this->register_task(43, &bdMarketplace::purchase_on_steam_initialize); COD POINTS purchase ?
+		this->register_task(42, &bdMarketplace::start_exchange_transaction);
+		this->register_task(43, &bdMarketplace::purchase_on_steam_initialize);
 		this->register_task(49, &bdMarketplace::get_expired_inventory_items);
 		this->register_task(60, &bdMarketplace::steam_process_durable);
 		this->register_task(130, &bdMarketplace::get_balance);
@@ -15,8 +17,22 @@ namespace demonware
 		this->register_task(232, &bdMarketplace::get_entitlements);
 	}
 
-	void bdMarketplace::start_exchange_transaction(service_server* server, byte_buffer* /*buffer*/) const
+	void bdMarketplace::start_exchange_transaction(service_server* server, byte_buffer* buffer) const
 	{
+#ifdef DEBUG
+		utils::io::write_file("demonware/bdMarketplace/start_exchange_transaction", buffer->get_buffer());
+#endif
+		// TODO:
+		auto reply = server->create_reply(this->task_id());
+		reply->send();
+	}
+
+	void bdMarketplace::purchase_on_steam_initialize(service_server* server, byte_buffer* buffer) const
+	{
+#ifdef DEBUG
+		utils::io::write_file("demonware/bdMarketplace/purchase_on_steam_initialize", buffer->get_buffer());
+#endif
+
 		// TODO:
 		auto reply = server->create_reply(this->task_id());
 		reply->send();
@@ -36,10 +52,15 @@ namespace demonware
 		reply->send();
 	}
 
-	void bdMarketplace::get_balance(service_server* server, byte_buffer* /*buffer*/) const
+	void bdMarketplace::get_balance(service_server* server, byte_buffer* buffer) const
 	{
+#ifdef DEBUG
+		utils::io::write_file("demonware/bdMarketplace/get_balance", buffer->get_buffer());
+#endif
+
 		// TODO:
 		auto reply = server->create_reply(this->task_id());
+
 		reply->send();
 	}
 

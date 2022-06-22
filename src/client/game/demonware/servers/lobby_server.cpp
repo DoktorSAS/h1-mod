@@ -23,8 +23,8 @@ namespace demonware
 		this->register_service<bdRichPresence>();
 		this->register_service<bdFacebook>();
 		this->register_service<bdUNK63>();
-		this->register_service<bdUNK80>();
-		this->register_service<bdUNK95>();
+		this->register_service<bdMarketplace>();
+		this->register_service<bdPublisherVariables>();
 		this->register_service<bdPresence>();
 		this->register_service<bdMarketingComms>();
 		this->register_service<bdMatchMaking2>();

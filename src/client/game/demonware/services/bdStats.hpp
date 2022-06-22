@@ -13,5 +13,6 @@ namespace demonware
 		void unk4(service_server* server, byte_buffer* buffer) const;
 		void unk8(service_server* server, byte_buffer* buffer) const;
 		void unk11(service_server* server, byte_buffer* buffer) const;
+		void write_server_validated_stats(service_server* server, byte_buffer* buffer) const;
 	};
 }
