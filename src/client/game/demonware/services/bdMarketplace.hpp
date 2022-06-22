@@ -8,12 +8,12 @@ namespace demonware
 		bdMarketplace();
 
 	private:
-		void startExchangeTransaction(service_server* server, byte_buffer* buffer) const;
-		void getExpiredInventoryItems(service_server* server, byte_buffer* buffer) const;
-		void steamProcessDurable(service_server* server, byte_buffer* buffer) const;
-		void getBalance(service_server* server, byte_buffer* buffer) const;
-		void getInventoryPaginated(service_server* server, byte_buffer* buffer) const;
-		void putPlayersInventoryItems(service_server* server, byte_buffer* buffer) const;
-		void getEntitlements(service_server* server, byte_buffer* buffer) const;
+		void start_exchange_transaction(service_server* server, byte_buffer* buffer) const;
+		void get_expired_inventory_items(service_server* server, byte_buffer* buffer) const;
+		void steam_process_durable(service_server* server, byte_buffer* buffer) const;
+		void get_balance(service_server* server, byte_buffer* buffer) const;
+		void get_inventory_paginated(service_server* server, byte_buffer* buffer) const;
+		void put_players_inventory_items(service_server* server, byte_buffer* buffer) const;
+		void get_entitlements(service_server* server, byte_buffer* buffer) const;
 	};
 }
