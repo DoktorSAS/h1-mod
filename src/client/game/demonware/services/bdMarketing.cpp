@@ -3,20 +3,28 @@
 
 namespace demonware
 {
-	bdMarketing::bdMarketing() : service(139, "bdMarketing")
+	bdMarketing::bdMarketing() : service(139, "bdMarketing") // maybe bdReward?
 	{
-		this->register_task(2, &bdMarketing::unk2);
-		this->register_task(3, &bdMarketing::unk3);
+		this->register_task(2, &bdMarketing::claim_reward_roll);
+		this->register_task(3, &bdMarketing::claim_client_achievements);
+		this->register_task(4, &bdMarketing::report_reward_events);
 	}
 
-	void bdMarketing::unk2(service_server* server, byte_buffer* /*buffer*/) const
+	void bdMarketing::claim_reward_roll(service_server* server, byte_buffer* /*buffer*/) const
 	{
 		// TODO:
 		auto reply = server->create_reply(this->task_id());
 		reply->send();
 	}
 
-	void bdMarketing::unk3(service_server* server, byte_buffer* /*buffer*/) const
+	void bdMarketing::claim_client_achievements(service_server* server, byte_buffer* /*buffer*/) const
+	{
+		// TODO:
+		auto reply = server->create_reply(this->task_id());
+		reply->send();
+	}
+
+	void bdMarketing::report_reward_events(service_server* server, byte_buffer* /*buffer*/) const
 	{
 		// TODO:
 		auto reply = server->create_reply(this->task_id());
