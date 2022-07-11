@@ -437,7 +437,7 @@ SystemLinkJoinMenu.BuildList = function( menu, controller )
 		menu.clearlist = menu:AddHelp({
 			name = "add_button_helper_text",
 			button_ref = "button_left_trigger",
-			helper_text = Engine.Localize("@SERVERLIST_CLEAR_LIST"),
+			helper_text = Engine.Localize("@MENU_DEMO_CLEAR_ALL_SEGMENTS"),
 			side = "right",
 			clickable = false,
 			priority = -1000
@@ -587,7 +587,7 @@ function menu_systemlink_join(f19_arg0, f19_arg1)
 	local serverTypes = {
 		{
 			menu = showOnlyPublicServers,
-			name = Engine.ToUpperCase( Engine.Localize( "MENU_PUBLIC" ) ),
+			name = Engine.ToUpperCase( Engine.Localize( "MENU_SB_TOOLTIP_TAB_INTERNET_SERVERS" ) ),
 			type = "PUBLIC"
 		},
 		{
